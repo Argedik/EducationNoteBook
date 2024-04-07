@@ -5,7 +5,7 @@ import NavbarContent from './titles';
 import { Logo } from './logo';
 import { motion, useCycle } from 'framer-motion';
 import { HamburgerMenu } from './hamburgerMenu';
-import { useDimensions } from '@/utils/use-dimensions';
+import { useDimensions } from '@/lib/use-dimensions';
 
 const Navbar = () => {
 	const containerRef = useRef(null);

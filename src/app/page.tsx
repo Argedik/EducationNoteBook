@@ -1,5 +1,6 @@
 'use client';
 
+import ArgedikContent from '@/components/content';
 import { useEffect, useState } from 'react';
 
 export default function Page() {
@@ -22,9 +23,12 @@ export default function Page() {
 		// Cleanup the event listener on component unmount
 		return () => window.removeEventListener('resize', updateHeaderHeight);
 	}, []);
+	const deneme = () => {
+		console.log();
+	};
 	return (
 		<main style={{ paddingTop: `${headerHeight}px` }}>
-			<h1>Hello, Next.js!</h1>
+			<ArgedikContent />
 		</main>
 	);
 }
