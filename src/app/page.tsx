@@ -1,13 +1,13 @@
 'use client';
 
 import ArgedikContent from '@/components/content';
+import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 
 export default function Page() {
 	const [headerHeight, setHeaderHeight] = useState(0);
 	console.log('test');
 	useEffect(() => {
-		// Function to update the variable with the current header height
 		const updateHeaderHeight = () => {
 			const navElement = document.querySelector('header nav') as HTMLElement;
 			console.log(navElement);
@@ -23,11 +23,11 @@ export default function Page() {
 		// Cleanup the event listener on component unmount
 		return () => window.removeEventListener('resize', updateHeaderHeight);
 	}, []);
-	const deneme = () => {
-		console.log();
-	};
+
 	return (
 		<main style={{ paddingTop: `${headerHeight}px` }}>
+			<div className="text-green-500">testdeneme</div>
+			<Button>Deneme</Button>
 			<ArgedikContent />
 		</main>
 	);

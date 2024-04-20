@@ -23,7 +23,7 @@ const Footer = () => {
 							</li>
 						</ul>
 					</div>
-					<div className="footer-col">
+					<div className={styles.footercol}>
 						<h4>get help</h4>
 						<ul>
 							<li>
@@ -43,7 +43,7 @@ const Footer = () => {
 							</li>
 						</ul>
 					</div>
-					<div className="footer-col">
+					<div className={styles.footercol}>
 						<h4>online shop</h4>
 						<ul>
 							<li>
@@ -60,7 +60,7 @@ const Footer = () => {
 							</li>
 						</ul>
 					</div>
-					<div className="footer-col">
+					<div className={styles.footercol}>
 						<h4>follow us</h4>
 						<div className="social-links">
 							<a href="#">

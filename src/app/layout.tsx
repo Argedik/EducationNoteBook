@@ -1,11 +1,10 @@
-import { Inter } from 'next/font/google';
+import { Nunito } from 'next/font/google';
 import './globals.scss';
 import React from 'react';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer/Footer';
-import Image from 'next/image';
 
-const inter = Inter({ subsets: ['latin'] });
+const font = Nunito({ subsets: ['latin'] });
 
 export const metadata = {
 	title: 'Blog',
@@ -19,7 +18,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
+			<body className={font.className}>
 				<Navbar />
 				{children}
 				<Footer />

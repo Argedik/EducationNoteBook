@@ -1,42 +1,60 @@
-import React from 'react';
-import { GetStaticProps } from 'next';
+import { useEffect, useState } from 'react';
+import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
+import { v4 } from 'uuid';
+import { storage } from '@/lib/firebase';
 import Image from 'next/image';
-import fs from 'fs';
-import path from 'path';
+import styles from './styles.module.scss';
 
-type Props = {
-	images: string[];
-};
+const ArgedikContent = () => {
+	const [imageUpload, setImageUpload] = useState<File | null>(null);
+	const [imageList, setImageList] = useState<string[]>([]);
 
-export const getStaticProps: GetStaticProps = async () => {
-	const imagesDirectory = path.join(process.cwd(), 'public/images');
-	const filenames: string[] = fs.readdirSync(imagesDirectory);
-	const images = filenames.map((name) => `/images/${name}`);
+	const imageListRef = ref(storage, 'images/');
 
-	return {
-		props: {
-			images,
-		},
+	const uploadImage = () => {
+		if (imageUpload == null) return;
+		const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+		uploadBytes(imageRef, imageUpload).then((snapshot) => {
+			getDownloadURL(snapshot.ref).then((url) => {
+				setImageList((prev) => [...prev, url]);
+			});
+			setImageList((prev) => [...prev]);
+		});
 	};
-};
 
-const ArgedikContent: React.FC<Props> = ({ images }) => {
+	useEffect(() => {
+		listAll(imageListRef).then((response) => {
+			const urls = response.items.map((item) => getDownloadURL(item));
+			Promise.all(urls).then((urls) => {
+				setImageList(urls);
+			});
+		});
+	}, [imageListRef]);
+
 	return (
-		<div style={{ maxWidth: '1170px', margin: 'auto' }}>
-			{images.map((image, index) => (
-				<div
-					key={index}
-					style={{
-						marginBottom: '10px',
-						float: 'left',
-						width: '33.3333%',
-						padding: '5px',
+		<div className={styles.content}>
+			<div className={styles.container}>
+				<div className={styles.item}>deneme1</div>
+				<div className={styles.item}>deneme2</div>
+				<div className={styles.item}>deneme3</div>
+				<div className={styles.item}>deneme4</div>
+				<div className={styles.item}>deneme5</div>
+				<div className={styles.item}>deneme6</div>
+			</div>
+			<div className="Firebase">
+				<input
+					type="file"
+					onChange={(event) => {
+						if (event.target.files) {
+							setImageUpload(event.target.files[0]);
+						}
 					}}
-				>
-					{/* Next.js'in Image bileşeni kullanılarak resim optimizasyonu sağlanır */}
-					<Image src={image} width={500} height={300} alt={`Image ${index}`} />
-				</div>
-			))}
+				/>
+				<button onClick={uploadImage}>Resim Yükle</button>
+				{imageList.map((url) => {
+					return <Image src={url} key={url} alt={url} width={50} height={50} />;
+				})}
+			</div>
 		</div>
 	);
 };

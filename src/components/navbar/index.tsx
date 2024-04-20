@@ -25,6 +25,7 @@ const Navbar = () => {
 		};
 		window.addEventListener('scroll', changeColor);
 	}, []);
+
 	return (
 		<header className="relative">
 			<motion.nav
