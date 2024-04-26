@@ -26,8 +26,8 @@ export default function Page() {
 
 	return (
 		<main style={{ paddingTop: `${headerHeight}px` }}>
-			<div className="text-green-500">testdeneme</div>
-			<Button>Deneme</Button>
+			<div className="text-green-500 space">testdeneme</div>
+			<Button size="lg">Deneme</Button>
 			<ArgedikContent />
 		</main>
 	);
