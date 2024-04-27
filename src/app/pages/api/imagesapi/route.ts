@@ -26,13 +26,13 @@
 // 	res.status(200).json({ message: 'testttt' });
 // }
 
-import type { NextApiRequest, NextApiResponse } from 'next';
+// import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-	if (req.method === 'GET') {
-		console.log('object');
-		// Process a POST request
-	} else {
-		// Handle any other HTTP method
-	}
-}
+// export default function handler(req: NextApiRequest, res: NextApiResponse) {
+// 	if (req.method === 'GET') {
+// 		console.log('object');
+// 		// Process a POST request
+// 	} else {
+// 		// Handle any other HTTP method
+// 	}
+// }

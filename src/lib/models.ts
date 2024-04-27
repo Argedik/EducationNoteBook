@@ -1,4 +1,4 @@
-import { Timestamp } from 'mongodb';
+// import { Timestamp } from 'mongodb';
 import mongoose from 'mongoose';
 const postSchema = new mongoose.Schema(
 	{
