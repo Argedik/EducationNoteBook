@@ -39,3 +39,4 @@ package-lock.js
 .env
 
 firebase.json
+src/app/pages/

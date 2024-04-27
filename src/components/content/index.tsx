@@ -35,7 +35,7 @@ const ArgedikContent = () => {
 
 	return (
 		<div>
-			<div className="fjt gap-x-2">
+			<div className="faj gap-x-2">
 				<Link href="/decoration">
 					<Button size="lg" variant="destructive">
 						Dekorasyon
