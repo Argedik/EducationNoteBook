@@ -1,5 +1,6 @@
+'use client';
 import { Button } from '@/components/ui/button';
-import React from 'react';
+import React, { useRef } from 'react';
 import style from './styles.module.scss';
 
 const Decoration = () => {
@@ -14,10 +15,17 @@ const Decoration = () => {
 					Ev
 				</Button> */}
 				<Button
+					className={style.decorationButton}
 					size="decoration"
 					variant="decoration"
 					style={{
 						backgroundImage: 'url(/images/decoration/Villa.jpg)',
+					}}
+					onClick={() => {
+						const radio = document.getElementById('villaRadio');
+						if (radio) {
+							radio.click();
+						}
 					}}
 				>
 					<div
@@ -45,6 +53,12 @@ const Decoration = () => {
 					style={{
 						backgroundImage: 'url(/images/decoration/ofis.webp)',
 					}}
+					onClick={() => {
+						const radio = document.getElementById('officeRadio');
+						if (radio) {
+							radio.click();
+						}
+					}}
 				>
 					<div
 						style={{
@@ -70,6 +84,12 @@ const Decoration = () => {
 					variant="decoration"
 					style={{
 						backgroundImage: 'url(/images/decoration/sanayi.jpeg)',
+					}}
+					onClick={() => {
+						const radio = document.getElementById('industryRadio');
+						if (radio) {
+							radio.click();
+						}
 					}}
 				>
 					<div

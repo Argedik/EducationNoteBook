@@ -2,3 +2,23 @@
 	border: 2px solid #555;
 	width: 1.5rem;
 }
+
+.decorationButton {
+	cursor: pointer;
+	perspective: 1000px; /* Butona derinlik hissi katmak için */
+	transform-style: preserve-3d;
+	transition: transform 0.3s, box-shadow 0.3s;
+	border-radius: 15px; /* Yuvarlak köşeler */
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Gölge efekti */
+	transform: translateZ(0px) scale(1); /* Varsayılan hali */
+}
+
+.decorationButton:hover {
+	transform: translateZ(15px) scale(1.05); /* Üzerine gelindiğinde efekt */
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.decorationButton:active {
+	transform: translateZ(5px) scale(0.95); /* Tıklandığında efekt */
+	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
