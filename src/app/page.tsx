@@ -31,10 +31,12 @@ export default function Page() {
 		let screenPosition = [-15, -2.5, -43];
 		let rotation = [0.3, 4.5, 0];
 
-		if (window.innerWidth < 768) {
-			screenScale = [0.9, 0.9, 0.9];
-		} else {
-			screenScale = [0.07, 0.06, 0.07];
+		if (typeof window !== 'undefined') {
+			if (window.innerWidth < 768) {
+				screenScale = [0.9, 0.9, 0.9];
+			} else {
+				screenScale = [0.07, 0.06, 0.07];
+			}
 		}
 		return [screenScale, screenPosition, rotation];
 	};

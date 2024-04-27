@@ -50,6 +50,7 @@ const NavbarContent = ({ desktop = false, isOpen = false }: Props) => {
 			}
 		};
 		window.addEventListener('scroll', changeColor);
+		return () => window.removeEventListener('scroll', changeColor);
 	}, []);
 
 	return desktop ? (

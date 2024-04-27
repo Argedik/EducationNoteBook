@@ -24,6 +24,8 @@ const Navbar = () => {
 			}
 		};
 		window.addEventListener('scroll', changeColor);
+		// Komponent yok edildiğinde olay dinleyicisini kaldır
+		return () => window.removeEventListener('scroll', changeColor);
 	}, []);
 
 	return (
