@@ -1,5 +1,12 @@
 import React from 'react';
 import styles from './styles.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+	faFacebook,
+	faInstagram,
+	faLinkedin,
+	faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
 	return (
@@ -7,73 +14,73 @@ const Footer = () => {
 			<div className={styles.container}>
 				<div className={styles.row}>
 					<div className={styles.footercol}>
-						<h4>company</h4>
+						<h4>İşletme</h4>
 						<ul>
 							<li>
-								<a href="#">about us</a>
+								<a href="#">Hakkımızda</a>
 							</li>
 							<li>
-								<a href="#">our services</a>
+								<a href="#">Hizmetlerimiz</a>
 							</li>
 							<li>
-								<a href="#">privacy policy</a>
+								<a href="#">Gizlilik Politikası</a>
 							</li>
 							<li>
-								<a href="#">affiliate program</a>
+								<a href="#">Ortaklık Programı</a>
 							</li>
 						</ul>
 					</div>
 					<div className={styles.footercol}>
-						<h4>get help</h4>
+						<h4>Yardım</h4>
 						<ul>
 							<li>
-								<a href="#">FAQ</a>
+								<a href="#">SSS</a>
 							</li>
 							<li>
-								<a href="#">shipping</a>
+								<a href="#">Özel Üyelikler</a>
 							</li>
 							<li>
-								<a href="#">returns</a>
+								<a href="#">Şikayetler</a>
 							</li>
 							<li>
-								<a href="#">order status</a>
+								<a href="#">Takip Numarası</a>
 							</li>
 							<li>
-								<a href="#">payment options</a>
+								<a href="#">Ödeme Seçenekleri</a>
 							</li>
 						</ul>
 					</div>
 					<div className={styles.footercol}>
-						<h4>online shop</h4>
+						<h4>Online Alışveriş</h4>
 						<ul>
 							<li>
-								<a href="#">watch</a>
+								<a href="#">Özel Üyelik</a>
 							</li>
 							<li>
-								<a href="#">bag</a>
+								<a href="#">Arkadaş Daveti</a>
 							</li>
 							<li>
-								<a href="#">shoes</a>
+								<a href="#">Ek Hizmet</a>
 							</li>
 							<li>
-								<a href="#">dress</a>
+								<a href="#">Özel Hizmet</a>
 							</li>
 						</ul>
 					</div>
 					<div className={styles.footercol}>
-						<h4>follow us</h4>
+						<h4>Sosyal Medya Hesaplarımız</h4>
 						<div className="social-links">
-							<a href="#">
-								<i className="fab fa-facebook-f"></i>
+							<a href="#" className="mx-2">
+								<FontAwesomeIcon icon={faLinkedin} size="2x" color="grey" />
+							</a>
+							<a href="#" className="mr-2">
+								<FontAwesomeIcon icon={faInstagram} size="2x" color="grey" />
+							</a>
+							<a href="#" className="mr-2">
+								<FontAwesomeIcon icon={faFacebook} size="2x" color="grey" />
 							</a>
 							<a href="#">
-								<i className="fab fa-twitter"></i>
-							</a>
-							<a href="#">
-								<i className="fab fa-instagram"></i>
-							</a>
-							<a href="#">
-								<i className="fab fa-linkedin-in"></i>
+								<FontAwesomeIcon icon={faTwitter} size="2x" color="grey" />
 							</a>
 						</div>
 					</div>
