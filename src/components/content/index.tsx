@@ -4,6 +4,8 @@ import { v4 } from 'uuid';
 import { storage } from '@/lib/firebase';
 import Image from 'next/image';
 import styles from './styles.module.scss';
+import { Button } from '../ui/button';
+import Link from 'next/link';
 
 const ArgedikContent = () => {
 	const [imageUpload, setImageUpload] = useState<File | null>(null);
@@ -32,28 +34,45 @@ const ArgedikContent = () => {
 	}, [imageListRef]);
 
 	return (
-		<div className={styles.content}>
-			<div className={styles.container}>
-				<div className={styles.item}>deneme1</div>
-				<div className={styles.item}>deneme2</div>
-				<div className={styles.item}>deneme3</div>
-				<div className={styles.item}>deneme4</div>
-				<div className={styles.item}>deneme5</div>
-				<div className={styles.item}>deneme6</div>
+		<div>
+			<div className="fjt gap-x-2">
+				<Link href="/decoration">
+					<Button size="lg" variant="destructive">
+						Dekorasyon
+					</Button>
+				</Link>
+				<Button size="sm" variant="outline">
+					Blog
+				</Button>
+				<Button size="default" variant="secondary">
+					3d Model üretimi
+				</Button>
 			</div>
-			<div className="Firebase">
-				<input
-					type="file"
-					onChange={(event) => {
-						if (event.target.files) {
-							setImageUpload(event.target.files[0]);
-						}
-					}}
-				/>
-				<button onClick={uploadImage}>Resim Yükle</button>
-				{imageList.map((url) => {
-					return <Image src={url} key={url} alt={url} width={50} height={50} />;
-				})}
+			<div className={styles.content}>
+				<div className={styles.container}>
+					<div className={styles.item}>deneme1</div>
+					<div className={styles.item}>deneme2</div>
+					<div className={styles.item}>deneme3</div>
+					<div className={styles.item}>deneme4</div>
+					<div className={styles.item}>deneme5</div>
+					<div className={styles.item}>deneme6</div>
+				</div>
+				<div className="Firebase">
+					<input
+						type="file"
+						onChange={(event) => {
+							if (event.target.files) {
+								setImageUpload(event.target.files[0]);
+							}
+						}}
+					/>
+					<button onClick={uploadImage}>Resim Yükle</button>
+					{imageList.map((url) => {
+						return (
+							<Image src={url} key={url} alt={url} width={50} height={50} />
+						);
+					})}
+				</div>
 			</div>
 		</div>
 	);

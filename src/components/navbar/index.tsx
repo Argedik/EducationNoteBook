@@ -27,7 +27,7 @@ const Navbar = () => {
 	}, []);
 
 	return (
-		<header className="relative xl:mb-16 lg:mb-28 ">
+		<header className="relative xl:mb-16 md:mb-28 sm:mb-16">
 			<motion.nav
 				initial={false}
 				custom={height}

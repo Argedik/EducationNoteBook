@@ -1,7 +1,6 @@
 'use client';
 
 import ArgedikContent from '@/components/content';
-import { Button } from '@/components/ui/button';
 import { Suspense, useEffect, useState } from 'react';
 import Car3d from '@/components/models3d/car';
 import { Canvas } from '@react-three/fiber';
@@ -44,7 +43,6 @@ export default function Page() {
 
 	return (
 		<main style={{ paddingTop: `${headerHeight}px` }}>
-			{' '}
 			<section className="w-full h-96 relative">
 				<Canvas
 					className="w-full h-screen bg-transparent"
@@ -65,8 +63,6 @@ export default function Page() {
 					/>
 				</Canvas>
 			</section>
-			<div className="text-green-500 space">testdeneme</div>
-			<Button size="lg">Deneme</Button>
 			<ArgedikContent />
 		</main>
 	);
