@@ -36,6 +36,12 @@ const ArgedikContent = () => {
 	return (
 		<div>
 			<div className="faj gap-x-2">
+				<Link href="/arge">
+					<Button size="default" variant="default">
+						Arge
+					</Button>
+				</Link>
+
 				<Link href="/decoration">
 					<Button size="lg" variant="destructive">
 						Dekorasyon
