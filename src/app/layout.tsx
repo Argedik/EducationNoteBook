@@ -17,19 +17,22 @@ export const metadata = {
 
 interface RootLayoutProps {
 	children: React.ReactNode;
-	showBars?: boolean;
+	// showBars?: boolean;
 }
 
 const RootLayout: React.FC<RootLayoutProps> = ({
 	children,
-	showBars = true,
+	// showBars = true,
 }) => {
 	return (
 		<html lang="en">
 			<body className={font.className}>
-				{showBars && <Navbar />}
+				<Navbar />
 				{children}
-				{showBars && <Footer />}
+				<Footer />
+				{/* {showBars && <Navbar />}
+				{children}
+				{showBars && <Footer />} */}
 			</body>
 		</html>
 	);
