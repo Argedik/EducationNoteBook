@@ -9,7 +9,11 @@
 	color: white;
 }
 
-.logo {
-	width: 3vw;
-	height: 3vh;
+.logoContainer {
+	top: 2rem;
+	left: 6rem;
+	width: 13vw;
+	height: 6vh;
+	z-index: 10;
+	position: absolute;
 }
