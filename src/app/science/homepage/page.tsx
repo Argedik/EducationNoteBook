@@ -5,7 +5,8 @@ import Image from 'next/image';
 import { Nunito } from 'next/font/google';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import styles from './styles.module.scss';
-import ScienceNavbar from '../navbar/page';
+import ScienceNavbar from './navbar';
+import ScienceLogo from './logo';
 
 const font = Nunito({ subsets: ['latin'] });
 
@@ -24,14 +25,7 @@ const HomePage = () => {
 		<html lang="en">
 			<body className={font.className}>
 				<ScienceNavbar />
-				<div className={`${styles.logoContainer}`}>
-					<Image
-						src="/assets/logo/mainLogo.png"
-						alt="Logo"
-						layout="fill"
-						objectFit="cover"
-					></Image>
-				</div>
+				<ScienceLogo />
 				<div className="flex w-full h-screen">
 					<div className="relative flex-1 h-full">
 						<div className={`${styles.homepage_text}`}>OYUN</div>
