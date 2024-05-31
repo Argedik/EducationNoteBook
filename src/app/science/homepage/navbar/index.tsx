@@ -1,11 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from './navbar.module.scss';
+import ScienceLogo from '../logo';
 
 const ScienceNavbar: React.FC = () => {
 	return (
 		<nav className={styles.navbar}>
-			<div className={styles.navbarLeft}></div>
+			<ScienceLogo className={styles.navbarLeft} />
 			<div className={styles.navbarRight}>
 				<Link href="/" className={styles.navLink}>
 					ANASAYFA

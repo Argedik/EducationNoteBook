@@ -25,7 +25,6 @@ const HomePage = () => {
 		<html lang="en">
 			<body className={font.className}>
 				<ScienceNavbar />
-				<ScienceLogo />
 				<div className="flex w-full h-screen">
 					<div className="relative flex-1 h-full">
 						<div className={`${styles.homepage_text}`}>OYUN</div>
